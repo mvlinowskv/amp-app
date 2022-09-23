@@ -21,7 +21,8 @@
     </script>
     <script async custom-element="amp-image-slider" src="https://cdn.ampproject.org/v0/amp-image-slider-0.1.js">
     </script>
-    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-1.0.js"></script>
+
 
 
 
@@ -40,8 +41,45 @@
 </head>
 
 <body>
+
+    <header class="w-100 bg-primary-color px-4 px-lg-5">
+        <nav class="w-100 d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center pt-4 pb-2">
+                <svg class="color-white me-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="30"
+                    height="30">
+                    <path fill="currentColor"
+                        d="M512 64c0 113.6-84.6 207.5-194.2 222c-7.1-53.4-30.6-101.6-65.3-139.3C290.8 78.3 364 32 448 32h32c17.7 0 32 14.3 32 32zM0 128c0-17.7 14.3-32 32-32H64c123.7 0 224 100.3 224 224v32 96c0 17.7-14.3 32-32 32s-32-14.3-32-32V352C100.3 352 0 251.7 0 128z" />
+                </svg>
+                <p class="ff-handwriting font-medium color-white mb-0 lh-1">Ogród i Dom</p>
+            </div>
+            <div class="h-100 d-flex align-items-center">
+                <ul class="d-flex justify-content-start justify-content-lg-center h-100 mb-0 menu-mobile">
+                    <div class="d-flex d-lg-none align-items-center pt-4 pb-4">
+                        <svg class="color-white me-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="30"
+                            height="30">
+                            <path fill="currentColor"
+                                d="M512 64c0 113.6-84.6 207.5-194.2 222c-7.1-53.4-30.6-101.6-65.3-139.3C290.8 78.3 364 32 448 32h32c17.7 0 32 14.3 32 32zM0 128c0-17.7 14.3-32 32-32H64c123.7 0 224 100.3 224 224v32 96c0 17.7-14.3 32-32 32s-32-14.3-32-32V352C100.3 352 0 251.7 0 128z" />
+                        </svg>
+                        <p class="ff-handwriting font-medium color-white mb-0 lh-1">Ogród i Dom</p>
+                    </div>
+                    <a class="text-decoration-none color-white font-small mx-2" href="#premiera">Premiera</a>
+                    <a class="text-decoration-none color-white font-small mx-2" href="#wybierz-roslinke">Wybierz
+                        roślinkę</a>
+                    <a class="text-decoration-none color-white font-small mx-2" href="#zadbaj">Zadbaj o swój ogród</a>
+                </ul>
+
+                <button class="d-lg-none color-white btn-menu border-0 outline-none bg-primary-color">
+                    <svg class="color-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="25" height="25">
+                        <path fill="currentColor"
+                            d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+                        </svg>
+                </button>
+
+            </div>
+        </nav>
+    </header>
     <section
-        class="d-flex flex-column flex-lg-row justify-content-center align-items-center bg-cover bg-bottom vh-75 w-100 p-4 p-lg-5"
+        class="d-flex flex-column flex-lg-row justify-content-center align-items-center bg-cover bg-bottom vh-75 w-100 p-4 p-lg-5" id="premiera"
         style="background-image: url('/img/pexels-scott-webb-305821.jpg');">
         <div class="w-100">
             <h1 class="color-primary font-primary ff-handwriting">Ogrodowe nowości <br /> Ogród & Dom</h1>
@@ -49,10 +87,10 @@
     </section>
 
     <section class="bg-primary-color p-4 p-lg-5">
-        <h2 class="text-center font-medium color-white mb-0">Do premiery książki pozostało...</h2>
-        <amp-date-countdown end-date="2022-10-15T14:14:00.000Z" offset-seconds="-10" layout="fixed-height" height="75">
+        <h2 class="text-center font-medium color-white mb-0 lh-1 mb-2">Do premiery książki pozostało...</h2>
+        <amp-date-countdown end-date="2022-10-15T14:14:00.000Z" offset-seconds="-10" layout="fixed-height" height="60">
             <template type="amp-mustache">
-                <div class="font-medium color-white text-center">
+                <div class="font-medium color-white text-center lh-1">
                     {{d}} dni : {{h}} godzin : {{m}} minut : {{s}} sekund.
                 </div>
 
@@ -60,13 +98,13 @@
         </amp-date-countdown>
     </section>
 
-    <section class="d-flex flex-column flex-lg-row p-4 p-lg-5 bg-secondary-color">
+    <section class="d-flex flex-column flex-lg-row p-4 p-lg-5 bg-secondary-color" id="wybierz-roslinke">
         <div class="w-100 h-100 d-flex flex-column">
             <h3 class="font-primary color-primary ff-handwriting">Wybierz roślinkę do ogrodu</h3>
             <p class="color-primary font-small">Spraw, by Twój ogród w końcu odżył, posadź coś nowego. <br /> Jesteś
                 zwolennikiem roślin X czy roślin Y? <br />Sprawdź!</p>
 
-            <div class="justify-self-end font-small color-primary w-75 mt-lg-5">
+            <div class="justify-self-end font-small color-primary w-100 mb-4 mt-lg-5">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                 industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
                 scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
@@ -81,15 +119,104 @@
         </div>
     </section>
 
-    <section class="bg-primary-color d-flex flex-column justify-content-center align-items-center p-4 p-lg-5">
+    <section class="bg-primary-color d-flex flex-column justify-content-center align-items-center p-4 p-lg-5" id="zadbaj">
         <h3 class="font-primary color-white ff-handwriting">Zobacz, jak zadbać o ogród</h3>
-        <p class="font-small color-white w-75 text-center">Więcej o zadbaniu ogrodu możesz dowiedzieć się na moim blogu lub mojej książce! Tutaj przedstawię krótki film przedstawiający podstawy dbania o ogród,
-             odpowiem na pytania t.j. jak podlewać rośliny? Jak używać odżywek dla roślin? Jak często zmieniać ziemię w doniczkach? Jak często wymieniać mniejsze doniczki na większe?
-        
+        <p class="font-small color-white w-75 text-center mb-0">Więcej o zadbaniu ogrodu możesz dowiedzieć się na moim blogu
+            lub mojej książce! Tutaj przedstawię krótki opis przedstawiający podstawy dbania o ogród,
+            odpowiem na pytania t.j. jak podlewać rośliny? Jak używać odżywek dla roślin? Jak często zmieniać ziemię w
+            doniczkach? Jak często wymieniać mniejsze doniczki na większe?
+
         </p>
 
-        <amp-youtube width="600" height="500" layout="responsive" data-videoid="J1LW1Nz0pd4">
-        </amp-youtube>
+
+
+        <div class="d-flex row row-cols-1 row-cols-lg-2 w-100 pt-4 pt-lg-5">
+            <div class="col d-flex flex-column flex-md-row align-items-center pb-4">
+                <div class="w-100">
+                    <amp-img class="square-img" alt="A view of the sea" src="/img/pexels-cottonbro-5858235.jpg"
+                        width="500" height="500" layout="responsive">
+                    </amp-img>
+                </div>
+
+                <div class="w-100 p-4 pb-0">
+                    <p class="font-small color-white mb-0">
+                        1. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                        been the industry's standard dummy text ever since the 1500s
+                    </p>
+                </div>
+            </div>
+
+            <div class="col d-flex flex-column flex-md-row align-items-center pb-4">
+                <div class="w-100">
+                    <amp-img class="square-img" alt="A view of the sea" src="/img/pexels-joshua-mcknight-3854760.jpg"
+                        width="500" height="500" layout="responsive">
+                    </amp-img>
+                </div>
+
+                <div class="w-100 p-4 pb-0">
+                    <p class="font-small color-white mb-0">
+                        2. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                        been the industry's standard dummy text ever since the 1500s
+                    </p>
+                </div>
+            </div>
+
+            <div class="col d-flex flex-column flex-md-row align-items-center pb-4 pb-lg-0">
+                <div class="w-100">
+                    <amp-img class="square-img" alt="A view of the sea" src="/img/pexels-julia-kuzenkov-1974508.jpg"
+                        width="500" height="500" layout="responsive">
+                    </amp-img>
+                </div>
+
+                <div class="w-100 p-4 pb-0">
+                    <p class="font-small color-white mb-0">
+                        3. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                        been the industry's standard dummy text ever since the 1500s
+                    </p>
+                </div>
+            </div>
+
+            <div class="col d-flex flex-column flex-md-row align-items-center pb-4 pb-lg-0">
+                <div class="w-100">
+                    <amp-img class="square-img" alt="A view of the sea" src="/img/pexels-kulbir-7252784.jpg" width="500"
+                        height="500" layout="responsive">
+                    </amp-img>
+                </div>
+
+                <div class="w-100 p-4 pb-0">
+                    <p class="font-small color-white mb-0">
+                        4. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                        been the industry's standard dummy text ever since the 1500s
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <section class="d-flex flex-column flex-lg-row p-4 p-lg-5 bg-secondary-color" id="wybierz-roslinke">
+
+        <div class="w-100">
+            <amp-image-slider class="mx-auto img-change" width="150" height="150" layout="responsive" initial-slider-position="0.3">
+                <amp-img src="/img/pexels-scott-webb-1048035.jpg" alt="A red apple" layout="fill"></amp-img>
+                <amp-img src="/img/pexels-adrian-mohammad-1224158.jpg" alt="A green apple" layout="fill"></amp-img>
+            </amp-image-slider>
+        </div>
+
+        <div class="w-100 h-100 d-flex flex-column">
+            <h4 class="font-primary color-primary ff-handwriting text-end">Nasze najlepsze przemiany kwiatów</h4>
+            <p class="color-primary font-small">Zobacz, jak dbamy o kwiaty i jaka jest róznica, jeśli dba się o nie według naszych zasad!</p>
+
+            <div class="justify-self-end font-small color-primary w-100 mb-4 mt-lg-5">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged.
+            </div>
+        </div>
+
     </section>
 
 
@@ -97,7 +224,7 @@
 
 
 
-    <script src="" async defer></script>
+    <script type="text/javascript" src="js/script.min.js"></script>
 </body>
 
 </html>
